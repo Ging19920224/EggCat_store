@@ -77,14 +77,14 @@ export default {
       const vm = this;
       const id = vm.orderid;
       const url = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/order/${id}`;
-      this.$http.get(url).then((response) => {
+      vm.$http.get(url).then((response) => {
         // console.log(response.data.order !== null);
         if(response.data.order !== null){
           vm.$router.push(`CartPay/${id}`);
           $('#search').modal('hide');
           vm.orderid = '';
         }else{
-          this.$bus.$emit('message:push','無此訂單', 'danger');
+          vm.$bus.$emit('message:push','無此訂單', 'danger');
           $('#search').modal('hide');
           vm.orderid = '';
         }
@@ -107,6 +107,10 @@ export default {
     height: 65px;
   }
   .nav-bgc{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     padding: 3px 145px!important;
     border-bottom: 1px solid rgb(40, 126, 140);
     background-color: rgb(250, 249, 249);
@@ -152,6 +156,21 @@ export default {
     }
     .nav-bgc {
       padding: 3px 25px!important;
+    }
+  }
+  @media (max-width: 375px) { 
+    .nav-bgc {
+      width: 375px;
+    }
+  }
+  @media (max-width: 360px) { 
+    .nav-bgc {
+      width: 360px;
+    }
+  }
+  @media (max-width: 320px) { 
+    .nav-bgc {
+      width: 320px;
     }
   }
 </style>

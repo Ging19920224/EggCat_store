@@ -3,14 +3,14 @@
     <loading :active.sync="isLoading"></loading>
     <CartNum :cartNum="cartNum"></CartNum>
     <Alert></Alert>
-    <div class="container pt-5 pb-5 mb-5">
+    <div class="container pt-5 pb-5 mb-5 mt-72">
       <router-link class="back" to="/CustomerProduct/0">
         <i class="fas fa-reply"></i>
         BACK
       </router-link>
       <div class="product-wrap row">
         <div class="col-lg-5 col-10 img-wrap mr-5 mb-5">
-          <img class="img-thumbnail img" :src="productData.imageUrl">
+          <div class="img-thumbnail img" :style="{'backgroundImage': `url(${productData.imageUrl})`}"></div>
           <div class="mask"></div>
         </div>
         <div class="col-lg-6 col-12 data mt-5">
@@ -63,7 +63,7 @@ export default {
       const vm = this;
       const url = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/cart`;
       vm.isLoading = true;
-      this.$http.get(url).then((response) => {
+      vm.$http.get(url).then((response) => {
         vm.cartNum = response.data.data.carts.length;
         vm.isLoading = false;
       })
@@ -84,13 +84,13 @@ export default {
       const id = vm.productId;
       const url = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/product/${id}`;
       vm.isLoading = true;
-      this.$http.get(url).then((response) => {
+      vm.$http.get(url).then((response) => {
         if(response.data.success){
           vm.productData = response.data.product;
           vm.isLoading = false;
         }else{
           vm.isLoading = false;
-          this.$bus.$emit('message:push','產品未上架', 'danger');
+          vm.$bus.$emit('message:push','產品未上架', 'danger');
           vm.$router.push(`/productData`);
         }
       })
@@ -102,13 +102,13 @@ export default {
         product_id: id,
         qty
       };
-      this.$http.post(url, { data: cart }).then((response) => {
+      vm.$http.post(url, { data: cart }).then((response) => {
         if(response.data.success){
-          this.$bus.$emit('message:push','成功加入購物車', 'success');
-          this.getCart();
+          vm.$bus.$emit('message:push','成功加入購物車', 'success');
+          vm.getCart();
           vm.qty = 1;
         }else{
-          this.$bus.$emit('message:push','加入購物車失敗', 'danger');
+          vm.$bus.$emit('message:push','加入購物車失敗', 'danger');
         }
       })
     },
@@ -132,8 +132,11 @@ export default {
 </script>
 
 <style scope>
+  .mt-72{
+    margin-top: 72px;
+  }
   .product-wrap{
-    min-height: 430px;
+    min-height: 60vh;
   }
   .text-color{
     color: rgb(40, 126, 140)!important;
@@ -146,6 +149,9 @@ export default {
     position: absolute;
     width: 100%;
     height: 100%;
+    background-size: contain; 
+    background-position: center;
+    background-repeat: no-repeat;
     z-index: 2;
   }
   .mask{

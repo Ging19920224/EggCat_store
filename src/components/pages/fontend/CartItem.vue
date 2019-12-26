@@ -1,7 +1,7 @@
 <template>
   <div class="mb-5">
     <loading :active.sync="isLoading"></loading>
-    <Progress :step="step"></Progress>
+    <Progress :step="step" class="mt-72 pt-2"></Progress>
     <div class="container row m-auto">
       <div class="col-md-7 col-12 mb-5">
         <form class="col-md-12" @submit.prevent="createOrder">
@@ -110,7 +110,7 @@ export default {
       const vm = this;
       const url = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/cart`;
       vm.isLoading = true;
-      this.$http.get(url).then((response) => {
+      vm.$http.get(url).then((response) => {
         vm.total = response.data.data;
         vm.cartNum = response.data.data.carts.length;
         vm.cart = response.data.data.carts;
@@ -121,7 +121,7 @@ export default {
       const vm = this;
       const url = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/cart/${id}`;
       vm.isLoading = true;
-      this.$http.delete(url).then(() => {
+      vm.$http.delete(url).then(() => {
         // console.log(response.data);
         vm.getCart();
         vm.isLoading = false;
@@ -134,12 +134,12 @@ export default {
         code: vm.coupon_code
       }
       vm.isLoading = true;
-      this.$http.post(url, {data: coupon}).then((response) => {
+      vm.$http.post(url, {data: coupon}).then((response) => {
         // console.log(response.data);
         if(response.data.success){
-          this.$bus.$emit('message:push',response.data.message, 'success');
+          vm.$bus.$emit('message:push',response.data.message, 'success');
         }else{
-          this.$bus.$emit('message:push',response.data.message, 'danger');
+          vm.$bus.$emit('message:push',response.data.message, 'danger');
         }
         vm.getCart();
         vm.isLoading = false;
@@ -150,22 +150,22 @@ export default {
       const url = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/order`;
       const order = vm.form;
       if(vm.cartNum === 0){
-        this.$bus.$emit('message:push','購物車內無商品！', 'danger');
+        vm.$bus.$emit('message:push','購物車內無商品！', 'danger');
         return
       }
-      this.$validator.validate().then((result) => {
+      vm.$validator.validate().then((result) => {
         if(result){
-          this.$http.post(url, {data: order}).then((response) => {
+          vm.$http.post(url, {data: order}).then((response) => {
           // console.log(response);
             vm.isLoading = true;
             if(response.data.success){
               vm.getCart();
-              this.$bus.$emit('message:push','訂單建立成功', 'success');
+              vm.$bus.$emit('message:push','訂單建立成功', 'success');
               vm.$router.push(`CartPay/${response.data.orderId}`);
             }
           })
         }else{
-          this.$bus.$emit('message:push','表單填寫不完整', 'danger');
+          vm.$bus.$emit('message:push','表單填寫不完整', 'danger');
         }
       })
     }
@@ -181,6 +181,9 @@ export default {
 </script>
 
 <style scope>
+  .mt-72{
+    margin-top: 72px;
+  }
   .text-color{
     color: rgb(40, 126, 140)!important;
   }
@@ -208,9 +211,6 @@ export default {
     border: 1px solid rgb(40, 126, 140);
     border-radius: 40px;
   }
-  .cart-item:hover{
-    box-shadow: 1px 1px 10px rgb(133, 132, 132);
-  }
   .cart-itemImg{
     width: 50px;
     height: 50px;
@@ -226,7 +226,7 @@ export default {
   }
   .item-price{
     position: absolute;
-    bottom: 0;
+    bottom: -7px;
     right: 15px;
     transform: translateY(-50%);
     color: rgb(18, 116, 196);

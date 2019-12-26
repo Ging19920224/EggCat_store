@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="text-center text-color mt-3 mb-3">
+    <h1 class="text-center text-color mt-72 pt-2 mb-3">
       <img class="title-img" src="../../../assets/images/title-L.png">
       貓奴小知識
       <img class="title-img" src="../../../assets/images/title-R.png">
@@ -131,6 +131,9 @@ export default {
 </script>
 
 <style scope>
+  .mt-72{
+    margin-top: 72px;
+  }
   .text-color{
     color: rgb(40, 126, 140)!important;
   }

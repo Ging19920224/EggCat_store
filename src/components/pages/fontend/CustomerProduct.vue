@@ -5,14 +5,14 @@
     </ProductSideBar>
     <Alert></Alert>
     <CartNum :cartNum="cartNum"></CartNum>
-      <h1 class="text-center text-color pt-3 mb-3">
+      <h1 class="text-center text-color pt-3 mb-0 mt-72">
       <img class="title-img" src="../../../assets/images/title-L.png">
       商品分類
       <img class="title-img" src="../../../assets/images/title-R.png">
       </h1>
       <div class="product">
         <div class="row">
-          <div class="col-xl-3 col-md-5 mb-4 mr-2 ml-5" 
+          <div class="col-xl-3 col-md-5 product-item" 
           v-for="item in nowProduct" :key="item.id">
             <div class="card border-0 br-10 productCard-h">
               <div class="product-img"            
@@ -89,7 +89,7 @@ export default {
       const vm = this;
       const url = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/products/all`;
       vm.isLoading = true;
-      this.$http.get(url).then((response) => {
+      vm.$http.get(url).then((response) => {
         vm.allProducts = response.data.products;
         // console.log(response.data);
         vm.isLoading = false;
@@ -99,7 +99,7 @@ export default {
       const vm = this;
       const url = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/product/${id}`;
       vm.status.loadingItem = id;
-      this.$http.get(url).then((response) => {
+      vm.$http.get(url).then((response) => {
         vm.product = response.data.product;
         // console.log(response.data.product);
         $('#productModal').modal('show');
@@ -110,7 +110,7 @@ export default {
       const vm = this;
       const url = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/cart`;
       vm.isLoading = true;
-      this.$http.get(url).then((response) => {
+      vm.$http.get(url).then((response) => {
         vm.cartNum = response.data.data.carts.length;
         vm.cart = response.data.data.carts;
         vm.isLoading = false;
@@ -124,19 +124,20 @@ export default {
         product_id: id,
         qty
       };
-      this.$http.post(url, { data: cart }).then((response) => {
+      vm.$http.post(url, { data: cart }).then((response) => {
         // console.log(response.data);
         if(response.data.success){
-          this.$bus.$emit('message:push','成功加入購物車', 'success');
+          vm.$bus.$emit('message:push','成功加入購物車', 'success');
         }else{
-          this.$bus.$emit('message:push','加入購物車失敗', 'danger');
+          vm.$bus.$emit('message:push','加入購物車失敗', 'danger');
         }
         vm.status.loadingItem = '';
         vm.getCart();
       })
     },
     changeProduct(category){
-      this.category = category;
+      const vm = this;
+      vm.category = category;
     },
     watchProduct(id){
       const vm = this;
@@ -150,20 +151,28 @@ export default {
   computed: {
     nowCategory(){
       let num = this.category;
-      if(num === 0){
-        return 'all'
-      }else if(num === '1'){
-        return '貓窩/跳台'
-      }else if(num === '2'){
-        return '貓沙/沙盆'
-      }else if(num === '3'){
-        return '食具/水具'
-      }else if(num === '4'){
-        return '抓板/玩具'
-      }else if(num === '5'){
-        return '飼料/罐頭'
-      }else if(num === '6'){
-        return '零食/營養品'
+      switch (num) {
+        case '0':
+          return false;
+          black
+        case '1':
+          return '貓窩/跳台';
+          black
+        case '2':
+          return '貓沙/沙盆';
+          black
+        case '3':
+          return '食具/水具';
+          black
+        case '4':
+          return '抓板/玩具';
+          black
+        case '5':
+          return '飼料/罐頭';
+          black
+        case '6':
+          return '零食/營養品';
+          black
       }
     },
     nowProduct(){
@@ -203,6 +212,9 @@ export default {
     width: 50px;
     height: 50px;
   }
+  .mt-72{
+    margin-top: 72px;
+  }
   .product{
     width: auto;
     margin-left: 250px;
@@ -214,12 +226,16 @@ export default {
     margin-left: 0;
     margin-right: 0;
   }
+  .product-item{
+    margin: 15px 5px;
+  }
   .product-img{
     height: 180px; 
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background-size: cover; 
+    background-size: contain; 
     background-position: center;
+    background-repeat: no-repeat;
     position: relative;
   }
   .productCard-h{
@@ -300,9 +316,22 @@ export default {
   }
   @media screen and (max-width: 768px) {
     .product {
-      width: 90%;
+      width: 95%;
       margin-left: auto;
       margin-right: auto;
+    }
+    .product-item {
+      margin: 15px 30px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .product {
+      width: 100%;
+      margin-right: 0;
+      margin-left: 0;
+    }
+    .product-item {
+      margin: 15px auto;
     }
   }
 </style>

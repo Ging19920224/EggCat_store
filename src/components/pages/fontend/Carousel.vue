@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="carouselExampleControls" class="carousel slide mt-3" data-ride="carousel">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
       <h1 class="text-center text-color mb-3">
         <img class="title-img" src="../../../assets/images/title-L.png">
         蛋蛋小貓寵物用品屋
@@ -50,11 +50,12 @@
                   經營理念
                 </span>
               </h2>
-              <h5 class="mb-0 text-light">
+              <p class="mb-0 text-light about">
                 秉持著能讓平凡人成為一位合格貓奴的信念，使貓奴為主子獻上至高無上的服務!!
-                <br/>
+              </p>
+              <p class="mt-2 text-light about">
                 我們只想做好一件事，提供喵星人『 一生幸福快樂的生活 』。
-              </h5>
+              </p>
             </div>
           </div>
         </div>
@@ -70,7 +71,7 @@
               關於蛋蛋小貓
               </span>
             </h2>
-            <p class="mb-3 text-justify text-light">24小時貓奴用品線上購物，提供您上萬種商品選擇，WDJ推薦、主食罐、貓零食、外出用品等，喵星人的最愛應有盡有。</p>
+            <p class="mb-3 text-justify text-light intro-content">24小時貓奴用品線上購物，提供您上萬種商品選擇，WDJ推薦、主食罐、貓零食、外出用品等，喵星人的最愛應有盡有。</p>
           </div>
         </div>
       </div>
@@ -81,6 +82,8 @@
 </template>
 
 <script>
+import $ from 'jquery';
+
 export default {
   data(){
     return{}
@@ -89,9 +92,13 @@ export default {
     goProduct(product){
       const vm = this;
       const url = `CustomerProduct/${product}`;
-      this.$router.push(`CustomerProduct/${product}`);
-      // console.log(url);
+      vm.$router.push(`CustomerProduct/${product}`);
     }
+  },
+  mounted(){
+    $('.carousel').carousel({
+      interval: 3000
+    })
   }
 }
 </script>
@@ -103,6 +110,10 @@ export default {
 .title-img{
   width: 50px;
   height: 50px;
+}
+.carousel{
+  margin-top: 72px;
+  padding-top: 10px;
 }
 .carousel-indicators{
   bottom: -50px;
@@ -118,6 +129,9 @@ export default {
 .carousel-control-prev:hover,
 .carousel-control-next:hover{
   color: rgba(40, 126, 140, 1.0)!important;
+  transform: scale(1.2);
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
 }
 .banner{
   width: 840px;
@@ -138,6 +152,9 @@ export default {
 	font-size: 2.5rem;
 	line-height: 4rem;
 	font-weight: 900;
+}
+.about, .intro-content{
+  letter-spacing: 3px;
 }
 .intro{
 	position: relative;
@@ -173,16 +190,25 @@ export default {
 .more:hover{
   text-decoration: none;
 	border: 2px solid rgba(40, 126, 140, 1.0);
-	color: rgba(40, 126, 140, 1.0)!important;
-	transition : border-top 0.35s ease 0.1s,
-		            border-right 0.35s ease 0.45s,
-		            border-bottom 0.35s ease 0.8s,
-		            border-left 0.35s ease 1.15s;
-	-webkit-transition : border-top 0.35s ease 0.1s,
-		                    border-right 0.35s ease 0.45s,
-		                    border-bottom 0.35s ease 0.8s,
-		                    border-left 0.35s ease 1.15s;
-	                            /*時間長度,動態變化,延遲的時間點*/
+  border-radius: 30px;
+  background-color: rgba(40, 126, 140, 1.0);
+	color: #fff!important;
+  padding: 3px 15px;
+	transition: border-top 0.1s ease 0.2s,
+              border-right 0.2s ease 0.3s,
+              border-bottom 0.3s ease 0.4s,
+              border-left 0.4s ease 0.5s,
+              background-color 0.55s ease 0.6s,
+              padding 0.6s,
+              color 0.55s ease 0.6s,;
+	-webkit-transition: border-top 0.1s ease 0.2s,
+                      border-right 0.2s ease 0.3s,
+                      border-bottom 0.3s ease 0.4s,
+                      border-left 0.4s ease 0.5s,
+                      background-color 0.5s ease 0.6s,
+                      padding 0.5s,
+                      color 0.5s ease 0.6s,;
+	                    /*時間長度,動態變化,延遲的時間點*/
 }
 @media screen and (max-width: 830px) {
   .intro-text {

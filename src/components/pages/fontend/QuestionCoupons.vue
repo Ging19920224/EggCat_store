@@ -1,6 +1,6 @@
 <template>
   <div>
-      <h1 class="text-center text-color mt-3 mb-1">
+      <h1 class="text-center text-color mt-72 pt-2 mb-1">
         <img class="title-img" src="../../../assets/images/title-L.png">
         超值優惠卷
         <img class="title-img" src="../../../assets/images/title-R.png">
@@ -219,18 +219,23 @@ export default {
     },
     Coupon(){
       const vm = this;
-      if(vm.result === 6){
-        vm.coupon = '123ern3k';
-        vm.couponTitle = '75折優惠';
-      }else if(vm.result === 5){
-        vm.coupon = 'jvijori666';
-        vm.couponTitle = '8折優惠';
-      }else if(vm.result === 4){
-        vm.coupon = 'jfijwi4';
-        vm.couponTitle = '85折優惠';
-      }else if(vm.result === 3){
-        vm.coupon = 'a3fkk2';
-        vm.couponTitle = '9折優惠';
+      switch (vm.result){
+        case 6:
+          vm.coupon = '123ern3k';
+          vm.couponTitle = '75折優惠';
+          black
+        case 5:
+          vm.coupon = 'jvijori666';
+          vm.couponTitle = '8折優惠';
+          black
+        case 4:
+          vm.coupon = 'jfijwi4';
+          vm.couponTitle = '85折優惠';
+          black
+        case 3:
+          vm.coupon = 'a3fkk2';
+          vm.couponTitle = '9折優惠';
+          black
       }
     }
   },
@@ -238,6 +243,9 @@ export default {
 </script>
 
 <style scope>
+  .mt-72{
+    margin-top: 72px;
+  }
   .text-color{
     color: rgb(40, 126, 140)!important;
   }

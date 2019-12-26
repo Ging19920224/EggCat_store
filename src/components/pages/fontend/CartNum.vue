@@ -59,13 +59,17 @@ export default {
   }
   @media screen and (max-width: 768px) {
     .cart{
+      bottom: 0;
       right: -8px;
+      top: 3px;
+      width: 65px;
+      height: 65px;
     }
   }
   @media screen and (max-width: 480px) {
     .cart{
-      left: 10px;
-      bottom: 90px;
+      top: 10px;
+      right: 40px;
       width: 50px;
       height: 50px;
     }
@@ -74,6 +78,8 @@ export default {
     }
   }
   @media screen and (max-width: 320px) {
-
+    .cart{
+      right: 60px;
+    }
   }
 </style>

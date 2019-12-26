@@ -1,7 +1,7 @@
 <template>
   <div>
     <loading :active.sync="isLoading"></loading>
-    <Progress :step="step"></Progress>
+    <Progress :step="step" class="mt-72 pt-1"></Progress>
     <div class="container text-center mb-5">
       <h2 class="mb-4">訂單資訊</h2>
       <h3 class="text-success" v-if="order.is_paid">(已付款)</h3>
@@ -115,7 +115,7 @@ export default {
       const vm = this;
       const url = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/order/${vm.orderId}`;
       vm.isLoading = true;
-      this.$http.get(url).then((response) => {
+      vm.$http.get(url).then((response) => {
         vm.order = response.data.order;
         if(vm.order.is_paid){
           vm.step = 3;
@@ -127,7 +127,7 @@ export default {
       const vm = this;
       const url = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/pay/${vm.orderId}`;
       vm.isLoading = true;
-      this.$http.post(url).then((response) => {
+      vm.$http.post(url).then((response) => {
         // console.log(response);
         if(response.data.success){
           vm.order.is_paid = true;
@@ -160,6 +160,9 @@ export default {
 </script>
 
 <style scope>
+  .mt-72{
+    margin-top: 72px;
+  }
   .text-color{
     color: rgb(40, 126, 140)!important;
   }

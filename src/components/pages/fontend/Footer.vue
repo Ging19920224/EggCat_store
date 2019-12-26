@@ -3,8 +3,8 @@
     <footer class="footer-bgc">
       <div class="container">
         <div class="row pt-3 pb-3">
-          <div class="col-12 col-md-3 text-left">
-            <h5 class="text-light mb-3 text-s">聯絡我們</h5>
+          <div class="col-12 col-md-3 text-right">
+            <h5 class="text-light mb-3">聯絡我們</h5>
             <p>
               <a href="tel:+866-2-2228-9999" class="text-light">
                 <i class="fas fa-phone"></i> (02)2228-9999
@@ -17,9 +17,9 @@
             </p>
           </div>
           <div class="col-12 col-md-6 text-center pt-4">
-            <h5 class="text-light text-s">Copyright © EggCat Designed by Ging</h5>
+            <h5 class="text-light">Copyright © EggCat Designed by Ging</h5>
           </div>
-          <div class="col-12 col-md-3 text-center pt-4">
+          <div class="col-12 col-md-3 text-left pt-4">
             <a href="javascript:;" class="icon mr-3">
               <i class="fab fa-line"></i>
             </a>
@@ -48,9 +48,6 @@ export default {
     background-color: rgba(40, 126, 140, 1.0)!important;
     z-index: 9!important;
   }
-  .text-s{
-    text-shadow: 1px 1px 10px black;
-  }
   .icon{
     color: #fff;
     font-size: 35px;
@@ -60,7 +57,7 @@ export default {
     text-shadow: 1px 1px 5px black;
   }
   @media screen and (max-width: 480px) {
-    .row .text-left{
+    .row .text-right, .row .text-left{
       text-align: center!important;
     }
     .pt-4 h5{

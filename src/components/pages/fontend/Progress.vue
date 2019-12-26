@@ -59,9 +59,9 @@ export default {
     margin-right: -5.5px;
   }
   .p-active{
-    background-color: rgb(18, 116, 196);
+    background-color: rgb(40, 126, 140);
   }
   .active-font{
-    color: rgb(18, 116, 196);
+    color: rgb(40, 126, 140);
   }
 </style>
