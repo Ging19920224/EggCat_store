@@ -11,7 +11,7 @@
       <img class="title-img" src="../../../assets/images/title-R.png">
       </h1>
       <div class="product">
-        <div class="row">
+        <div class="row justify-content-start">
           <div class="col-xl-3 col-md-5 product-item" 
           v-for="item in nowProduct" :key="item.id">
             <div class="card border-0 br-10 productCard-h">
@@ -178,10 +178,10 @@ export default {
     nowProduct(){
       const vm = this;
       const page = vm.page.nowPage;
-      const totalPage = Math.ceil(vm.allProducts.length/9);
+      const totalPage = Math.ceil(vm.allProducts.length/12);
       vm.page.total = totalPage;
-      const indexStr = page * 9 - 9;
-      const indexEnd = page * 9 ; 
+      const indexStr = page * 12 - 12;
+      const indexEnd = page * 12 ; 
       const nowAllProduct = vm.allProducts.slice(indexStr, indexEnd);
       if(!vm.nowCategory){
         return nowAllProduct;
@@ -221,13 +221,14 @@ export default {
     min-height: 70vh;
     padding-top: 20px;
     border-radius: 20px;
+    margin-bottom: 50px;
   }
   .product .row{
     margin-left: 0;
     margin-right: 0;
   }
   .product-item{
-    margin: 15px 5px;
+    margin-top: 25px;
   }
   .product-img{
     height: 180px; 

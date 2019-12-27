@@ -136,6 +136,7 @@ export default {
     margin-top: 72px;
   }
   .product-wrap{
+    margin-top: 3rem;
     min-height: 60vh;
   }
   .text-color{
