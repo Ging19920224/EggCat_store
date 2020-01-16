@@ -1,63 +1,142 @@
 <template>
   <div class="mb-5">
-    <Progress :step="step" class="mt-72 pt-2"></Progress>
+    <Progress
+      :step="step"
+      class="mt-72 pt-2"
+    />
     <div class="container row m-auto">
       <div class="col-md-7 col-12 mb-5">
-        <form class="col-md-12" @submit.prevent="createOrder">
+        <form
+          class="col-md-12"
+          @submit.prevent="createOrder"
+        >
           <div class="form-group">
-          <label for="username" class="text-color"><i class="fas fa-user"></i> 收件人姓名</label>
-          <span class="text-danger" v-if="errors.has('name')">姓名必須輸入</span>
-          <input type="text" class="form-control" name="name" id="username"
-            v-model="form.user.name" placeholder="輸入姓名"
-            v-validate="'required'" :class="{'is-invalid': errors.has('name')}">
-        </div>
-        <div class="form-group">
-          <label for="usertel" class="text-color"><i class="fas fa-phone-alt"></i> 收件人電話</label>
-          <span class="text-danger" v-if="errors.has('tel')">電話欄位不得留空</span>
-          <input type="tel" class="form-control" id="usertel"
-          name="tel" v-model="form.user.tel" placeholder="請輸入電話"
-          v-validate="'required'" :class="{'is-invalid': errors.has('tel')}">
-        </div>
-        <div class="form-group">
-          <label for="useremail" class="text-color"><i class="fas fa-envelope"></i> Email</label>
-          <span class="text-danger" v-if="errors.has('email')">
-            {{ errors.first('email')}}
-          </span>
-          <input type="email" class="form-control" name="email" id="useremail"
-            v-model="form.user.email" placeholder="請輸入 Email"
-            v-validate="'required|email'" :class="{'is-invalid': errors.has('email')}">
-        </div>
-        <div class="form-group">
-          <label for="useraddress" class="text-color">
-            <i class="fas fa-map-marker-alt"></i> 收件人地址</label>
-          <span class="text-danger" v-if="errors.has('address')">地址欄位不得留空</span>
-          <input type="text" class="form-control"
-          name="address" id="useraddress" v-model="form.user.address"
-            placeholder="請輸入地址" v-validate="'required'"
-            :class="{'is-invalid': errors.has('address')}">
-        </div>
-        <div class="form-group">
-          <label for="comment" class="text-color"><i class="fas fa-comment-dots"></i> 留言(選填)</label>
-          <textarea name="" id="comment" class="form-control"
-          cols="30" rows="10" v-model="form.message"></textarea>
-        </div>
-        <div class="text-center">
-          <button class="btn btn-info">前往付款 <i class="fas fa-caret-right"></i></button>
-        </div>
-      </form>
+            <label
+              for="username"
+              class="text-color"
+            ><i class="fas fa-user" /> 收件人姓名</label>
+            <span
+              class="text-danger"
+              v-if="errors.has('name')"
+            >姓名必須輸入</span>
+            <input
+              type="text"
+              class="form-control"
+              name="name"
+              id="username"
+              v-model="form.user.name"
+              placeholder="輸入姓名"
+              v-validate="'required'"
+              :class="{'is-invalid': errors.has('name')}"
+            >
+          </div>
+          <div class="form-group">
+            <label
+              for="usertel"
+              class="text-color"
+            ><i class="fas fa-phone-alt" /> 收件人電話</label>
+            <span
+              class="text-danger"
+              v-if="errors.has('tel')"
+            >電話欄位不得留空</span>
+            <input
+              type="tel"
+              class="form-control"
+              id="usertel"
+              name="tel"
+              v-model="form.user.tel"
+              placeholder="請輸入電話"
+              v-validate="'required'"
+              :class="{'is-invalid': errors.has('tel')}"
+            >
+          </div>
+          <div class="form-group">
+            <label
+              for="useremail"
+              class="text-color"
+            ><i class="fas fa-envelope" /> Email</label>
+            <span
+              class="text-danger"
+              v-if="errors.has('email')"
+            >
+              {{ errors.first('email') }}
+            </span>
+            <input
+              type="email"
+              class="form-control"
+              name="email"
+              id="useremail"
+              v-model="form.user.email"
+              placeholder="請輸入 Email"
+              v-validate="'required|email'"
+              :class="{'is-invalid': errors.has('email')}"
+            >
+          </div>
+          <div class="form-group">
+            <label
+              for="useraddress"
+              class="text-color"
+            >
+              <i class="fas fa-map-marker-alt" /> 收件人地址</label>
+            <span
+              class="text-danger"
+              v-if="errors.has('address')"
+            >地址欄位不得留空</span>
+            <input
+              type="text"
+              class="form-control"
+              name="address"
+              id="useraddress"
+              v-model="form.user.address"
+              placeholder="請輸入地址"
+              v-validate="'required'"
+              :class="{'is-invalid': errors.has('address')}"
+            >
+          </div>
+          <div class="form-group">
+            <label
+              for="comment"
+              class="text-color"
+            ><i class="fas fa-comment-dots" /> 留言(選填)</label>
+            <textarea
+              name=""
+              id="comment"
+              class="form-control"
+              cols="30"
+              rows="10"
+              v-model="form.message"
+            />
+          </div>
+          <div class="text-center">
+            <button class="btn btn-info">
+              前往付款 <i class="fas fa-caret-right" />
+            </button>
+          </div>
+        </form>
       </div>
       <div class="col-md-5 col-12 cart-list">
-        <h4 class="text-center text-dark">購物清單 <span class="badge badge-danger ml-3">
+        <h4 class="text-center text-dark">
+          購物清單 <span class="badge badge-danger ml-3">
             {{ cartNum }}
           </span>
           件
         </h4>
-        <div class="cart-item mb-2" v-for="(item, index) in cart" :key="index">
-          <button type="button" class="btn-delete mr-1"
-          @click="removeCartItem(item.id)">
-            <i class="far fa-trash-alt"></i>
+        <div
+          class="cart-item mb-2"
+          v-for="(item, index) in cart"
+          :key="index"
+        >
+          <button
+            type="button"
+            class="btn-delete mr-1"
+            @click="removeCartItem(item.id)"
+          >
+            <i class="far fa-trash-alt" />
           </button>
-          <img :src="item.product.imageUrl" class="cart-itemImg mr-1">
+          <img
+            :src="item.product.imageUrl"
+            class="cart-itemImg mr-1"
+          >
           <span class="item-title text-color">
             {{ item.product.title }}
           </span>
@@ -65,22 +144,32 @@
           <span class="item-qty">{{ item.qty }}/{{ item.product.unit }}</span>
         </div>
         <div class="cart-item mb-3 text-center bg-total">
-          <span class="item-total">總額 <span class="text-success"
-          v-if="total.final_total !== total.total">
-          折扣價 </span>NT {{ total.final_total | currency }}</span>
+          <span class="item-total">總額 <span
+            class="text-success"
+            v-if="total.final_total !== total.total"
+          >
+            折扣價 </span>NT {{ total.final_total | currency }}</span>
         </div>
         <div class="input-group mb-3 ml-4">
           <div class="input-group-prepend">
-            <button type="botton" class="btn btn-info" @click="useCouponCode">
+            <button
+              type="botton"
+              class="btn btn-info"
+              @click="useCouponCode"
+            >
               送出
             </button>
           </div>
-          <input type="text" class="input-code" placeholder="請輸入優惠碼"
-          v-model="coupon_code">
+          <input
+            type="text"
+            class="input-code"
+            placeholder="請輸入優惠碼"
+            v-model="coupon_code"
+          >
         </div>
       </div>
     </div>
-    <Alert></Alert>
+    <Alert />
   </div>
 </template>
 

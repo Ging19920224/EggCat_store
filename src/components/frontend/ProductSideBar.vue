@@ -1,58 +1,96 @@
 <template>
   <div>
-    <button class="side-btn" @click="openSide">
-      <i class="fas fa-list-ul"></i>
+    <button
+      class="side-btn"
+      @click="openSide"
+    >
+      <i class="fas fa-list-ul" />
     </button>
     <nav class="side text-center pt-5">
       <ul class="sideBar">
-        <li class="sideBar-item text-center position-relative"
-        @click="changeProduct('0')"
-        :class="{'side-active':category === '0'}">
+        <li
+          class="sideBar-item text-center position-relative"
+          @click="changeProduct('0')"
+          :class="{'side-active':category === '0'}"
+        >
           全部商品 ({{ allNum }})
-          <img src="../../assets/images/cathand.png"
-          class="side-img" v-if="category === '0'">
+          <img
+            src="../../assets/images/cathand.png"
+            class="side-img"
+            v-if="category === '0'"
+          >
         </li>
-        <li class="sideBar-item text-center position-relative"
-        @click="changeProduct('1')"
-        :class="{'side-active':category === '1'}">
+        <li
+          class="sideBar-item text-center position-relative"
+          @click="changeProduct('1')"
+          :class="{'side-active':category === '1'}"
+        >
           貓窩/跳台 ({{ categoryNum[0] }})
-          <img src="../../assets/images/cathand.png"
-          class="side-img" v-if="category === '1'">
+          <img
+            src="../../assets/images/cathand.png"
+            class="side-img"
+            v-if="category === '1'"
+          >
         </li>
-        <li class="sideBar-item text-center position-relative"
-        @click="changeProduct('2')"
-        :class="{'side-active':category === '2'}">
+        <li
+          class="sideBar-item text-center position-relative"
+          @click="changeProduct('2')"
+          :class="{'side-active':category === '2'}"
+        >
           貓沙/沙盆 ({{ categoryNum[1] }})
-          <img src="../../assets/images/cathand.png"
-          class="side-img" v-if="category === '2'">
+          <img
+            src="../../assets/images/cathand.png"
+            class="side-img"
+            v-if="category === '2'"
+          >
         </li>
-        <li class="sideBar-item text-center position-relative"
-        @click="changeProduct('3')"
-        :class="{'side-active':category === '3'}">
+        <li
+          class="sideBar-item text-center position-relative"
+          @click="changeProduct('3')"
+          :class="{'side-active':category === '3'}"
+        >
           食具/水具 ({{ categoryNum[2] }})
-          <img src="../../assets/images/cathand.png"
-          class="side-img" v-if="category === '3'">
+          <img
+            src="../../assets/images/cathand.png"
+            class="side-img"
+            v-if="category === '3'"
+          >
         </li>
-        <li class="sideBar-item text-center position-relative"
-        @click="changeProduct('4')"
-        :class="{'side-active':category === '4'}">
+        <li
+          class="sideBar-item text-center position-relative"
+          @click="changeProduct('4')"
+          :class="{'side-active':category === '4'}"
+        >
           抓板/玩具 ({{ categoryNum[3] }})
-          <img src="../../assets/images/cathand.png"
-          class="side-img" v-if="category === '4'">
+          <img
+            src="../../assets/images/cathand.png"
+            class="side-img"
+            v-if="category === '4'"
+          >
         </li>
-        <li class="sideBar-item text-center position-relative"
-        @click="changeProduct('5')"
-        :class="{'side-active':category === '5'}">
+        <li
+          class="sideBar-item text-center position-relative"
+          @click="changeProduct('5')"
+          :class="{'side-active':category === '5'}"
+        >
           飼料/罐頭 ({{ categoryNum[4] }})
-          <img src="../../assets/images/cathand.png"
-          class="side-img" v-if="category === '5'">
+          <img
+            src="../../assets/images/cathand.png"
+            class="side-img"
+            v-if="category === '5'"
+          >
         </li>
-        <li class="sideBar-item text-center position-relative"
-        @click="changeProduct('6')"
-        :class="{'side-active':category === '6'}">
+        <li
+          class="sideBar-item text-center position-relative"
+          @click="changeProduct('6')"
+          :class="{'side-active':category === '6'}"
+        >
           零食/營養品 ({{ categoryNum[5] }})
-          <img src="../../assets/images/cathand.png"
-          class="side-img" v-if="category === '6'">
+          <img
+            src="../../assets/images/cathand.png"
+            class="side-img"
+            v-if="category === '6'"
+          >
         </li>
       </ul>
     </nav>
@@ -66,9 +104,11 @@ export default {
   props: {
     category: {
       type: String,
+      default: String,
     },
     allProducts: {
       type: Array,
+      default: Array,
     }
     ,
   },
@@ -129,7 +169,7 @@ export default {
     position: fixed;
     padding: 0px 10px;
     top: 20px;
-    left: 30px;
+    left: 130px;
     font-size: 20px;
     color: rgb(40, 126, 140);
     border: 1px solid rgb(40, 126, 140);
@@ -208,7 +248,7 @@ export default {
   }
   @media screen and (max-width: 480px) {
     .side-btn {
-      left: 105px;
+      left: 25px;
     }
   }
   @media screen and (max-width: 320px) {

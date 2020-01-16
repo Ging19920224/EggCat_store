@@ -1,20 +1,43 @@
 <template>
   <div>
-    <router-link to="/CartItem" class="cart mr-5 text-center">
+    <Alert />
+    <a
+      @click="goPay"
+      class="cart mr-5 text-center"
+    >
       <span class="cart-num">
         {{ cartNum }}
       </span>
-      <p class="mb-0"><i class="fas fa-shopping-cart"></i></p>
+      <p class="mb-0"><i class="fas fa-shopping-cart" /></p>
       <p class="text-centeer cart-title">購物車</p>
-    </router-link>
+    </a>
   </div>
 </template>
 
 <script>
+import Alert from '../AlertMessage.vue';
+
 export default {
-  props: ['cartNum'],
+  props: {
+    cartNum: {
+      type: Number,
+      default: Number,
+    },
+  },
+  components: {
+    Alert,
+  },
   data() {
     return {};
+  },
+  methods: {
+    goPay() {
+      if (this.cartNum !== 0) {
+        this.$router.push('/CartItem');
+      } else {
+        this.$bus.$emit('message:push', '購物車內無商品', 'danger');
+      }
+    },
   },
 };
 </script>
@@ -29,13 +52,14 @@ export default {
     bottom: 50px;
     right: 5px;
     padding: 5px 10px;
-    color: #fff;
+    color: #fff!important;
     border: 1px solid #fff;
     font-size: 25px;
     z-index: 9999;
+    cursor: pointer;
   }
   .cart:hover{
-    color: rgb(40, 126, 140);
+    color: rgb(40, 126, 140)!important;
     background-color: #fff;
     border: 1px solid rgb(40, 126, 140);
     text-decoration: none;
@@ -57,22 +81,22 @@ export default {
   }
   @media screen and (max-width: 768px) {
     .cart{
-      bottom: 0;
-      right: -8px;
-      top: 3px;
       width: 65px;
       height: 65px;
     }
   }
   @media screen and (max-width: 480px) {
     .cart{
-      top: 10px;
-      right: 40px;
       width: 50px;
       height: 50px;
     }
     .cart-title{
       display: none;
+    }
+    .cart-num {
+      top: -5px;
+      right: -5px;
+      font-size: 10px;
     }
   }
   @media screen and (max-width: 320px) {

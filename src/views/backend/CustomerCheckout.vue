@@ -1,8 +1,11 @@
 <template>
   <div>
-    <loading :active.sync="isLoading"></loading>
+    <loading :active.sync="isLoading" />
     <div class="my-5 row justify-content-center">
-      <form class="col-md-6" @submit.prevent="payOrder">
+      <form
+        class="col-md-6"
+        @submit.prevent="payOrder"
+      >
         <table class="table">
           <thead>
             <th>品名</th>
@@ -10,16 +13,32 @@
             <th>單價</th>
           </thead>
           <tbody>
-            <tr v-for="item in order.products" :key="item.id">
-              <td class="align-middle">{{ item.product.title }}</td>
-              <td class="align-middle">{{ item.qty }}/{{ item.product.unit }}</td>
-              <td class="align-middle text-right">{{ item.final_total }}</td>
+            <tr
+              v-for="item in order.products"
+              :key="item.id"
+            >
+              <td class="align-middle">
+                {{ item.product.title }}
+              </td>
+              <td class="align-middle">
+                {{ item.qty }}/{{ item.product.unit }}
+              </td>
+              <td class="align-middle text-right">
+                {{ item.final_total }}
+              </td>
             </tr>
           </tbody>
           <tfoot>
             <tr>
-              <td colspan="2" class="text-right">總計</td>
-              <td class="text-right">{{ order.total }}</td>
+              <td
+                colspan="2"
+                class="text-right"
+              >
+                總計
+              </td>
+              <td class="text-right">
+                {{ order.total }}
+              </td>
             </tr>
           </tfoot>
         </table>
@@ -27,7 +46,9 @@
         <table class="table">
           <tbody>
             <tr>
-              <th width="100">Email</th>
+              <th width="100">
+                Email
+              </th>
               <td>{{ order.user.email }}</td>
             </tr>
             <tr>
@@ -46,13 +67,21 @@
               <th>付款狀態</th>
               <td>
                 <span v-if="!order.is_paid">尚未付款</span>
-                <span v-else class="text-success">付款完成</span>
+                <span
+                  v-else
+                  class="text-success"
+                >付款完成</span>
               </td>
             </tr>
           </tbody>
         </table>
-        <div class="text-right" v-if="order.is_paid === false">
-          <button class="btn btn-danger">確認付款去</button>
+        <div
+          class="text-right"
+          v-if="order.is_paid === false"
+        >
+          <button class="btn btn-danger">
+            確認付款去
+          </button>
         </div>
       </form>
     </div>

@@ -1,59 +1,99 @@
 <template>
   <div>
-    <ProductSideBar :category="category" :allProducts="allProducts" @emitCategory="changeProduct">
-    </ProductSideBar>
-    <Alert></Alert>
-    <CartNum :cartNum="cartNum"></CartNum>
-      <h1 class="text-center text-color pt-3 mb-0 mt-72">
-      <img class="title-img" src="../../assets/images/title-L.png">
+    <ProductSideBar
+      :category="category"
+      :all-products="allProducts"
+      @emitCategory="changeProduct"
+    />
+    <Alert />
+    <CartNum :cart-num="cartNum" />
+    <h1 class="text-center text-color pt-3 mb-0 mt-72">
+      <img
+        class="title-img"
+        src="../../assets/images/title-L.png"
+      >
       商品分類
-      <img class="title-img" src="../../assets/images/title-R.png">
-      </h1>
-      <div class="product">
-        <div class="row justify-content-start">
-          <div class="col-xl-3 col-md-5 product-item"
-          v-for="item in nowProduct" :key="item.id">
-            <div class="card border-0 br-10 productCard-h">
-              <div class="product-img"
-              :style="{'backgroundImage': `url(${item.imageUrl})`}">
-                <a href="#" @click.prevent="watchProduct(item.id)" class="product-more">
-                  <span class="more-text text-center">
-                    <i class="fas fa-eye"></i><br/>
-                    產品詳情
-                  </span>
-                </a>
-              </div>
-              <div class="card-body position-relative">
-                <span class="badge badge-warning mb-2">
-                  {{ item.category }}
-                </span>
-                <h5 class="card-title">
-                  <a href="#"
-                  @click.prevent="watchProduct(item.id)" class="text-color">{{ item.title }}</a>
-                </h5>
-                <p class="card-text">{{ item.description }}</p>
-                <span class="h5 text-danger ds-inline-block product-price"
-                v-if="!item.price">網路價 {{ item.origin_price | currency }}</span>
-                <del class="h6 product-orginprice">原價 {{ item.origin_price |currency }}</del>
-                <span class="h5 text-danger product-price"
-                v-if="item.price">網路價 {{ item.price | currency }}</span>
-              </div>
-              <div class="card-footer d-flex">
-                <a href="#"
-                @click.prevent="watchProduct(item.id)" class="col-6 text-center more-btn">
+      <img
+        class="title-img"
+        src="../../assets/images/title-R.png"
+      >
+    </h1>
+    <div class="product">
+      <div class="row justify-content-start">
+        <div
+          class="col-xl-3 col-md-5 product-item"
+          v-for="item in nowProduct"
+          :key="item.id"
+        >
+          <div class="card border-0 br-10 productCard-h">
+            <div
+              class="product-img"
+              :style="{'backgroundImage': `url(${item.imageUrl})`}"
+            >
+              <a
+                href="#"
+                @click.prevent="watchProduct(item.id)"
+                class="product-more"
+              >
+                <span class="more-text text-center">
+                  <i class="fas fa-eye" /><br>
                   產品詳情
-                </a>
-                <div class="col-6 text-center cart-btn" @click="addtoCart(item.id)">
-                  <i class="fas fa-spinner fa-spin" v-if="loadingItem === item.id"></i>
-                  加入購物車
-                </div>
+                </span>
+              </a>
+            </div>
+            <div class="card-body position-relative">
+              <span class="badge badge-warning mb-2">
+                {{ item.category }}
+              </span>
+              <h5 class="card-title">
+                <a
+                  href="#"
+                  @click.prevent="watchProduct(item.id)"
+                  class="text-color"
+                >{{ item.title }}</a>
+              </h5>
+              <p class="card-text">
+                {{ item.description }}
+              </p>
+              <span
+                class="h5 text-danger ds-inline-block product-price"
+                v-if="!item.price"
+              >網路價 {{ item.origin_price | currency }}</span>
+              <del class="h6 product-orginprice">原價 {{ item.origin_price |currency }}</del>
+              <span
+                class="h5 text-danger product-price"
+                v-if="item.price"
+              >網路價 {{ item.price | currency }}</span>
+            </div>
+            <div class="card-footer d-flex">
+              <a
+                href="#"
+                @click.prevent="watchProduct(item.id)"
+                class="col-6 text-center more-btn"
+              >
+                產品詳情
+              </a>
+              <div
+                class="col-6 text-center cart-btn"
+                @click="addtoCart(item.id)"
+              >
+                <i
+                  class="fas fa-spinner fa-spin"
+                  v-if="loadingItem === item.id"
+                />
+                加入購物車
               </div>
             </div>
           </div>
         </div>
       </div>
-      <Pagination :page="page" @emitPage="changePage" v-show="category === '0'"></Pagination>
     </div>
+    <Pagination
+      :page="page"
+      @emitPage="changePage"
+      v-show="category === '0'"
+    />
+  </div>
 </template>
 
 <script>
@@ -295,6 +335,10 @@ export default {
     .product-item {
       margin: 15px 30px;
     }
+    .bgc-no {
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
   }
   @media screen and (max-width: 480px) {
     .product {
@@ -304,6 +348,9 @@ export default {
     }
     .product-item {
       margin: 15px auto;
+    }
+    .cart {
+      right: -30px;
     }
   }
 </style>

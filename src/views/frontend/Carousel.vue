@@ -1,54 +1,95 @@
 <template>
   <div>
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div
+      id="carouselExampleControls"
+      class="carousel slide"
+      data-ride="carousel"
+    >
       <h1 class="text-center text-color mb-3">
-        <img class="title-img" src="../../assets/images/title-L.png">
+        <img
+          class="title-img"
+          src="../../assets/images/title-L.png"
+        >
         蛋蛋小貓寵物用品屋
-        <img class="title-img" src="../../assets/images/title-R.png">
+        <img
+          class="title-img"
+          src="../../assets/images/title-R.png"
+        >
       </h1>
       <ol class="carousel-indicators">
-        <li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleControls" data-slide-to="1"></li>
-        <li data-target="#carouselExampleControls" data-slide-to="2"></li>
+        <li
+          data-target="#carouselExampleControls"
+          data-slide-to="0"
+          class="active"
+        />
+        <li
+          data-target="#carouselExampleControls"
+          data-slide-to="1"
+        />
+        <li
+          data-target="#carouselExampleControls"
+          data-slide-to="2"
+        />
       </ol>
       <div class="carousel-inner">
-        <a class="carousel-control-prev"
-        href="#carouselExampleControls"
-        role="button" data-slide="prev">
-          <i class="fas fa-chevron-left"></i>
+        <a
+          class="carousel-control-prev"
+          href="#carouselExampleControls"
+          role="button"
+          data-slide="prev"
+        >
+          <i class="fas fa-chevron-left" />
           <span class="sr-only">Previous</span>
         </a>
-        <a class="carousel-control-next"
-        href="#carouselExampleControls"
-        role="button" data-slide="next">
-          <i class="fas fa-chevron-right"></i>
+        <a
+          class="carousel-control-next"
+          href="#carouselExampleControls"
+          role="button"
+          data-slide="next"
+        >
+          <i class="fas fa-chevron-right" />
           <span class="sr-only">Next</span>
         </a>
         <div class="carousel-item active position-relative">
-          <img src="../../assets/images/banner-1.jpg"
-          class="d-block banner img-thumbnail m-auto">
+          <img
+            src="../../assets/images/banner-1.jpg"
+            class="d-block banner img-thumbnail m-auto"
+          >
           <p class="text-center mt-2">
-            <a href="#" @click.prevent="goProduct('1')"
-            class="more more-border text-center"
-            title="前往產品">前往貓跳台</a>
+            <a
+              href="#"
+              @click.prevent="goProduct('1')"
+              class="more more-border text-center"
+              title="前往產品"
+            >前往貓跳台</a>
           </p>
         </div>
         <div class="carousel-item">
-          <img src="../../assets/images/banner-2.jpg"
-          class="d-block banner img-thumbnail m-auto">
+          <img
+            src="../../assets/images/banner-2.jpg"
+            class="d-block banner img-thumbnail m-auto"
+          >
           <p class="text-center mt-2">
-            <a href="#" @click.prevent="goProduct('3')"
-            class="more more-border text-center"
-            title="前往產品">前往飲水器</a>
+            <a
+              href="#"
+              @click.prevent="goProduct('3')"
+              class="more more-border text-center"
+              title="前往產品"
+            >前往飲水器</a>
           </p>
         </div>
         <div class="carousel-item">
-          <img src="../../assets/images/banner-3.jpg"
-          class="d-block banner img-thumbnail m-auto">
+          <img
+            src="../../assets/images/banner-3.jpg"
+            class="d-block banner img-thumbnail m-auto"
+          >
           <p class="text-center mt-2">
-            <a href="#" @click.prevent="goProduct('2')"
-            class="more more-border text-center"
-            title="前往產品">前往貓砂盆</a>
+            <a
+              href="#"
+              @click.prevent="goProduct('2')"
+              class="more more-border text-center"
+              title="前往產品"
+            >前往貓砂盆</a>
           </p>
         </div>
       </div>
@@ -77,16 +118,19 @@
     <section class="page-section clearfix">
       <div class="container">
         <div class="intro text-center">
-          <img class="intro-img img-fluid mb-3 img-thumbnail rounded"
-          src="../../assets/images/banner-4.png">
+          <img
+            class="intro-img img-fluid mb-3 img-thumbnail rounded"
+            src="../../assets/images/banner-4.png"
+          >
           <div class="intro-text bg-theme p-5 rounded img-thumbnail text-center">
             <h2 class="section-heading mb-4 text-light">
               <span class="section-heading-lower">
-              關於蛋蛋小貓
+                關於蛋蛋小貓
               </span>
             </h2>
             <p class="mb-3 text-justify text-light intro-content">
-              24小時貓奴用品線上購物，提供您上萬種商品選擇，WDJ推薦、主食罐、貓零食、外出用品等，喵星人的最愛應有盡有。</p>
+              24小時貓奴用品線上購物，提供您上萬種商品選擇，WDJ推薦、主食罐、貓零食、外出用品等，喵星人的最愛應有盡有。
+            </p>
           </div>
         </div>
       </div>

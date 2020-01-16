@@ -1,12 +1,15 @@
 <template>
   <div>
-    <Navbar/>
-    <Alert></Alert>
+    <Navbar />
+    <Alert />
     <div class="container-fluid">
       <div class="row">
-        <Sidebar></Sidebar>
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-          <router-view></router-view>
+        <Sidebar />
+        <main
+          role="main"
+          class="col-md-9 ml-sm-auto col-lg-10 px-4"
+        >
+          <router-view />
         </main>
       </div>
     </div>

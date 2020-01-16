@@ -1,64 +1,128 @@
 <template>
   <div>
     <nav class="navbar navbar-expand-lg navbar-light nav-bgc">
-      <router-link class="bgc-no" to="/">
-        <img class="w-65" src="../../assets/images/logo.png" alt="蛋蛋小貓商標">
+      <router-link
+        class="bgc-no"
+        to="/"
+      >
+        <img
+          class="w-65"
+          src="../../assets/images/logo.png"
+          alt="蛋蛋小貓商標"
+        >
       </router-link>
-      <button class="navbar-toggler btn-color"
-      type="button" data-toggle="collapse"
-      data-target="#navbarNavAltMarkup"
-      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
+      <button
+        class="navbar-toggler btn-color"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars" />
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div
+        class="collapse navbar-collapse"
+        id="navbarNavAltMarkup"
+      >
         <div class="navbar-nav m-auto">
-          <router-link class="nav-item nav-link fz-20 mr-2 text-center" to="/CustomerProduct/0">
-            <i class="fab fa-product-hunt"></i>
+          <router-link
+            class="nav-item nav-link fz-20 mr-2 text-center"
+            to="/CustomerProduct/0"
+          >
+            <i class="fab fa-product-hunt" />
             商品分類
           </router-link>
-          <router-link class="nav-item nav-link fz-20 mr-2 text-center" to="/QuestionCoupons">
-            <i class="fas fa-ticket-alt"></i>
+          <router-link
+            class="nav-item nav-link fz-20 mr-2 text-center"
+            to="/QuestionCoupons"
+          >
+            <i class="fas fa-ticket-alt" />
             超值優惠卷
           </router-link>
-          <router-link class="nav-item nav-link fz-20 mr-2 text-center" to="/Knowledge">
-            <i class="far fa-lightbulb"></i>
+          <router-link
+            class="nav-item nav-link fz-20 mr-2 text-center"
+            to="/Knowledge"
+          >
+            <i class="far fa-lightbulb" />
             貓奴小知識
           </router-link>
-          <a href="#" @click.prevent="openSearch" class="nav-item nav-link fz-20 mr-2 text-center">
-            <i class="fas fa-search"></i>
+          <a
+            href="#"
+            @click.prevent="openSearch"
+            class="nav-item nav-link fz-20 mr-2 text-center"
+          >
+            <i class="fas fa-search" />
             訂單查詢
           </a>
         </div>
       </div>
-      <router-link class="bgc-no" to="/" id="logo">
-        <img class="w-65" src="../../assets/images/logo.png" alt="蛋蛋小貓商標">
+      <router-link
+        class="bgc-no"
+        to="/"
+        id="logo"
+      >
+        <img
+          class="w-65"
+          src="../../assets/images/logo.png"
+          alt="蛋蛋小貓商標"
+        >
       </router-link>
     </nav>
-    <div class="modal fade" id="search" tabindex="-1" role="dialog"
-      aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
+    <div
+      class="modal fade"
+      id="search"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog"
+        role="document"
+      >
         <div class="modal-content border-0">
           <div class="modal-header search-bg text-white">
-            <h5 class="modal-title" id="exampleModalLabel">
-              <img src="../../assets/images/cathand.png" class="cathand">
+            <h5
+              class="modal-title"
+              id="exampleModalLabel"
+            >
+              <img
+                src="../../assets/images/cathand.png"
+                class="cathand"
+              >
               <span>訂單查詢</span>
             </h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
             <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="請輸入訂單編號" v-model="orderid">
-              <div class="search btn btn-info" @click="searchOrder">
-                <i class="fas fa-search"></i> 查詢
+              <input
+                type="text"
+                class="form-control"
+                placeholder="請輸入訂單編號"
+                v-model="orderid"
+              >
+              <div
+                class="search btn btn-info"
+                @click="searchOrder"
+              >
+                <i class="fas fa-search" /> 查詢
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <Alert></Alert>
+    <Alert />
   </div>
 </template>
 

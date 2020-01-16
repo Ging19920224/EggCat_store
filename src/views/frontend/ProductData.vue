@@ -1,39 +1,68 @@
 <template>
   <div>
-    <CartNum :cartNum="cartNum"></CartNum>
-    <Alert></Alert>
+    <CartNum :cart-num="cartNum" />
+    <Alert />
     <div class="container pt-5 pb-5 mb-5 mt-72">
-      <router-link class="back" to="/CustomerProduct/0">
-        <i class="fas fa-reply"></i>
+      <router-link
+        class="back"
+        to="/CustomerProduct/0"
+      >
+        <i class="fas fa-reply" />
         BACK
       </router-link>
       <div class="product-wrap row">
         <div class="col-lg-5 col-10 img-wrap mr-5 mb-5">
-          <div class="img-thumbnail img"
-          :style="{'backgroundImage': `url(${productData.imageUrl})`}"></div>
-          <div class="mask"></div>
+          <div
+            class="img-thumbnail img"
+            :style="{'backgroundImage': `url(${productData.imageUrl})`}"
+          />
+          <div class="mask" />
         </div>
         <div class="col-lg-6 col-12 data mt-5">
-          <h2 class="mb-3 title text-color">{{ productData.title }}</h2>
+          <h2 class="mb-3 title text-color">
+            {{ productData.title }}
+          </h2>
           <span class="badge badge-warning mb-3">
             {{ productData.category }}
           </span>
           <p class="mb-3 description">
             {{ productData.description }}
           </p>
-          <h5 class="text-content">【產品說明】</h5>
+          <h5 class="text-content">
+            【產品說明】
+          </h5>
           <p>{{ productData.content }}</p>
           <p class="mt-5 price">
             <span class="h2 text-danger mr-3">NT$ {{ productData.price }}</span>
             <del class="h6 text-muted">NT$ {{ productData.origin_price }}</del>
           </p>
           <p class="pt-3">
-            <button type="button" class="btn btn-info mr-2" @click="selectQty('del')"> - </button>
-            <input type="text" class="qty" v-model="qty" disabled>
-            <button type="button" class="btn btn-info ml-2" @click="selectQty('add')"> + </button>
+            <button
+              type="button"
+              class="btn btn-info mr-2"
+              @click="selectQty('del')"
+            >
+              -
+            </button>
+            <input
+              type="text"
+              class="qty"
+              v-model="qty"
+              disabled
+            >
+            <button
+              type="button"
+              class="btn btn-info ml-2"
+              @click="selectQty('add')"
+            >
+              +
+            </button>
             <span class="ml-2">{{ productData.unit }}</span>
-            <button @click="addtoCart(productData.id, qty)"
-            type="button" class="btn btn-info float-right">
+            <button
+              @click="addtoCart(productData.id, qty)"
+              type="button"
+              class="btn btn-info float-right"
+            >
               加入購物車
             </button>
             <span class="total text-color float-right mt-2 mr-3">小計 NT$ {{ nowPrice }}</span>

@@ -1,20 +1,41 @@
 <template>
   <div>
-      <h1 class="text-center text-color mt-72 pt-2 mb-1">
-        <img class="title-img" src="../../assets/images/title-L.png">
-        超值優惠卷
-        <img class="title-img" src="../../assets/images/title-R.png">
+    <h1 class="text-center text-color mt-72 pt-2 mb-1">
+      <img
+        class="title-img"
+        src="../../assets/images/title-L.png"
+      >
+      超值優惠卷
+      <img
+        class="title-img"
+        src="../../assets/images/title-R.png"
+      >
+    </h1>
+    <div
+      class="container text-center
+    mt-4 img-thumbnail rounded pt-3 pb-3 position-relative knowledge"
+    >
+      <h1 class="text-light">
+        考驗你的貓咪小知識
       </h1>
-    <div class="container text-center
-    mt-4 img-thumbnail rounded pt-3 pb-3 position-relative knowledge">
-      <h1 class="text-light">考驗你的貓咪小知識</h1>
-      <h3 class="text-light mt-3"><i class="far fa-grin-squint"></i> 答對越多 優惠就越多！！</h3>
-      <h6 class="text-light mt-3"><i class="far fa-lightbulb"></i>小秘訣：可先至貓奴小知識瀏覽提高答對率唷！</h6>
+      <h3 class="text-light mt-3">
+        <i class="far fa-grin-squint" /> 答對越多 優惠就越多！！
+      </h3>
+      <h6 class="text-light mt-3">
+        <i class="far fa-lightbulb" />小秘訣：可先至貓奴小知識瀏覽提高答對率唷！
+      </h6>
       <h2 class="text-light mt-5">
-        <i class="fas fa-angle-double-down"></i>
-        快來挑戰看看吧 <i class="fas fa-angle-double-down"></i></h2>
-      <img src="../../assets/images/cat.jpeg" class="position-absolute cat-one">
-      <img src="../../assets/images/cat2.jpg" class="position-absolute cat-two">
+        <i class="fas fa-angle-double-down" />
+        快來挑戰看看吧 <i class="fas fa-angle-double-down" />
+      </h2>
+      <img
+        src="../../assets/images/cat.jpeg"
+        class="position-absolute cat-one"
+      >
+      <img
+        src="../../assets/images/cat2.jpg"
+        class="position-absolute cat-two"
+      >
     </div>
     <div class="container text-center mb-5 question-warp">
       <div class="row">
@@ -25,16 +46,34 @@
           <div class="card-body bg-white border">
             <div class="radio">
               <label>
-                <input type="radio" name="optradio1" value="1" v-model="answer1"> 蛋白質
+                <input
+                  type="radio"
+                  name="optradio1"
+                  value="1"
+                  v-model="answer1"
+                > 蛋白質
               </label>
             </div>
             <div class="radio">
-              <label><input type="radio" name="optradio1" value="2" v-model="answer1"> 脂肪</label>
+              <label><input
+                type="radio"
+                name="optradio1"
+                value="2"
+                v-model="answer1"
+              > 脂肪</label>
             </div>
             <div class="radio">
-              <label><input type="radio" name="optradio1" value="3" v-model="answer1"> 碳水化合物</label>
+              <label><input
+                type="radio"
+                name="optradio1"
+                value="3"
+                v-model="answer1"
+              > 碳水化合物</label>
             </div>
-            <img src="../../assets/images/cat3.jpg" class="question-img">
+            <img
+              src="../../assets/images/cat3.jpg"
+              class="question-img"
+            >
           </div>
         </div>
         <div class="card col-md-5 col-12 question">
@@ -44,16 +83,34 @@
           <div class="card-body bg-white border">
             <div class="radio">
               <label>
-                <input type="radio" name="optradio2" value="1" v-model="answer2"> 蛋白質
+                <input
+                  type="radio"
+                  name="optradio2"
+                  value="1"
+                  v-model="answer2"
+                > 蛋白質
               </label>
             </div>
             <div class="radio">
-              <label><input type="radio" name="optradio2" value="2" v-model="answer2"> 葡萄糖</label>
+              <label><input
+                type="radio"
+                name="optradio2"
+                value="2"
+                v-model="answer2"
+              > 葡萄糖</label>
             </div>
             <div class="radio">
-              <label><input type="radio" name="optradio2" value="3" v-model="answer2"> 鈣質</label>
+              <label><input
+                type="radio"
+                name="optradio2"
+                value="3"
+                v-model="answer2"
+              > 鈣質</label>
             </div>
-            <img src="../../assets/images/cat4.png" class="question-img">
+            <img
+              src="../../assets/images/cat4.png"
+              class="question-img"
+            >
           </div>
         </div>
         <div class="card col-md-5 col-12 question">
@@ -63,16 +120,34 @@
           <div class="card-body bg-white border">
             <div class="radio">
               <label>
-                <input type="radio" name="optradio3" value="1" v-model="answer3"> 心臟
+                <input
+                  type="radio"
+                  name="optradio3"
+                  value="1"
+                  v-model="answer3"
+                > 心臟
               </label>
             </div>
             <div class="radio">
-              <label><input type="radio" name="optradio3" value="2" v-model="answer3"> 肝臟</label>
+              <label><input
+                type="radio"
+                name="optradio3"
+                value="2"
+                v-model="answer3"
+              > 肝臟</label>
             </div>
             <div class="radio">
-              <label><input type="radio" name="optradio3" value="3" v-model="answer3"> 腎臟</label>
+              <label><input
+                type="radio"
+                name="optradio3"
+                value="3"
+                v-model="answer3"
+              > 腎臟</label>
             </div>
-            <img src="../../assets/images/cat5.jpeg" class="question-img">
+            <img
+              src="../../assets/images/cat5.jpeg"
+              class="question-img"
+            >
           </div>
         </div>
         <div class="card col-md-5 col-12 question">
@@ -82,16 +157,34 @@
           <div class="card-body bg-white border">
             <div class="radio">
               <label>
-                <input type="radio" name="optradio4" value="1" v-model="answer4"> 焦慮不安
+                <input
+                  type="radio"
+                  name="optradio4"
+                  value="1"
+                  v-model="answer4"
+                > 焦慮不安
               </label>
             </div>
             <div class="radio">
-              <label><input type="radio" name="optradio4" value="2" v-model="answer4"> 生氣</label>
+              <label><input
+                type="radio"
+                name="optradio4"
+                value="2"
+                v-model="answer4"
+              > 生氣</label>
             </div>
             <div class="radio">
-              <label><input type="radio" name="optradio4" value="3" v-model="answer4"> 非常放鬆</label>
+              <label><input
+                type="radio"
+                name="optradio4"
+                value="3"
+                v-model="answer4"
+              > 非常放鬆</label>
             </div>
-            <img src="../../assets/images/cat6.jpeg" class="question-img">
+            <img
+              src="../../assets/images/cat6.jpeg"
+              class="question-img"
+            >
           </div>
         </div>
         <div class="card col-md-5 col-12 question">
@@ -101,16 +194,34 @@
           <div class="card-body bg-white border">
             <div class="radio">
               <label>
-                <input type="radio" name="optradio5" value="1" v-model="answer5"> 希望主人能陪牠玩
+                <input
+                  type="radio"
+                  name="optradio5"
+                  value="1"
+                  v-model="answer5"
+                > 希望主人能陪牠玩
               </label>
             </div>
             <div class="radio">
-              <label><input type="radio" name="optradio5" value="2" v-model="answer5"> 想睡覺</label>
+              <label><input
+                type="radio"
+                name="optradio5"
+                value="2"
+                v-model="answer5"
+              > 想睡覺</label>
             </div>
             <div class="radio">
-              <label><input type="radio" name="optradio5" value="3" v-model="answer5"> 想咬人</label>
+              <label><input
+                type="radio"
+                name="optradio5"
+                value="3"
+                v-model="answer5"
+              > 想咬人</label>
             </div>
-            <img src="../../assets/images/cat7.png" class="question-img">
+            <img
+              src="../../assets/images/cat7.png"
+              class="question-img"
+            >
           </div>
         </div>
         <div class="card col-md-5 col-12 question">
@@ -120,49 +231,109 @@
           <div class="card-body bg-white border">
             <div class="radio">
               <label>
-                <input type="radio" name="optradio6" value="1" v-model="answer6"> 覺得很滿足、很舒服時
+                <input
+                  type="radio"
+                  name="optradio6"
+                  value="1"
+                  v-model="answer6"
+                > 覺得很滿足、很舒服時
               </label>
             </div>
             <div class="radio">
-              <label><input type="radio" name="optradio6" value="2" v-model="answer6"> 肚子餓時</label>
+              <label><input
+                type="radio"
+                name="optradio6"
+                value="2"
+                v-model="answer6"
+              > 肚子餓時</label>
             </div>
             <div class="radio">
-              <label><input type="radio" name="optradio6" value="3" v-model="answer6"> 想睡覺時</label>
+              <label><input
+                type="radio"
+                name="optradio6"
+                value="3"
+                v-model="answer6"
+              > 想睡覺時</label>
             </div>
           </div>
-          <img src="../../assets/images/cat8.jpeg" class="question-img">
+          <img
+            src="../../assets/images/cat8.jpeg"
+            class="question-img"
+          >
         </div>
       </div>
-      <button type="button" class="answer text-center mb-5" @click="checkAnswer">
-        <img src="../../assets/images/cathand.png"
-          class="answer-img"> 送出答案
+      <button
+        type="button"
+        class="answer text-center mb-5"
+        @click="checkAnswer"
+      >
+        <img
+          src="../../assets/images/cathand.png"
+          class="answer-img"
+        > 送出答案
       </button>
     </div>
-    <div class="modal fade" id="answer" tabindex="-1" role="dialog"
-      aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
+    <div
+      class="modal fade"
+      id="answer"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog"
+        role="document"
+      >
         <div class="modal-content border-0">
           <div class="modal-header bg-qustion text-white">
-            <h5 class="modal-title" id="exampleModalLabel">
+            <h5
+              class="modal-title"
+              id="exampleModalLabel"
+            >
               <span>貓奴小知識問答結果</span>
             </h5>
-            <button type="button" class="close"
-            data-dismiss="modal" aria-label="Close" @click="restAnswer">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+              @click="restAnswer"
+            >
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body text-center pt-5 pb-5 position-relative">
-            <span class="text-success h6" v-if="result > 2">
-              恭喜您答對了 {{ result }} 題 !<br/>
+            <span
+              class="text-success h6"
+              v-if="result > 2"
+            >
+              恭喜您答對了 {{ result }} 題 !<br>
               獲得{{ couponTitle }}，優惠卷代碼：{{ coupon }}
             </span>
-            <span class="text-danger h6" v-else>可惜，您只答對了 {{ result }} 題～<br/>可以先去貓奴小知識補充知識喲！</span>
-            <img v-if="result > 2"
-            src="../../assets/images/catGood.jpeg" class="position-absolute answerCat">
-            <img v-else src="../../assets/images/catGG.jpg" class="position-absolute answerCat">
+            <span
+              class="text-danger h6"
+              v-else
+            >可惜，您只答對了 {{ result }} 題～<br>可以先去貓奴小知識補充知識喲！</span>
+            <img
+              v-if="result > 2"
+              src="../../assets/images/catGood.jpeg"
+              class="position-absolute answerCat"
+            >
+            <img
+              v-else
+              src="../../assets/images/catGG.jpg"
+              class="position-absolute answerCat"
+            >
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-info" @click="clocseResult">確定</button>
+            <button
+              type="button"
+              class="btn btn-info"
+              @click="clocseResult"
+            >
+              確定
+            </button>
           </div>
         </div>
       </div>

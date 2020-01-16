@@ -1,28 +1,56 @@
 <template>
   <div>
     <div class="container text-center mt-5 mb-5">
-        <div class="circle" :class="{'p-active':step === 1 || step === 2 || step === 3}">
-          1
-          <span class="step"
-          :class="{'p-active-font':step === 1 || step === 2 || step === 3}">確認購物清單</span>
-        </div>
-        <div class="circle-line" :class="{'p-active':step === 2 || step === 3}"></div>
-        <div class="circle" :class="{'p-active':step === 2 || step === 3}">
-          2
-          <span class="step" :class="{'p-active-font':step === 2 || step === 3}">金流付款</span>
-        </div>
-        <div class="circle-line" :class="{'p-active':step === 3}"></div>
-        <div class="circle" :class="{'p-active':step === 3}">
-          3
-          <span class="step" :class="{'p-active-font':step === 3}">完成</span>
-        </div>
+      <div
+        class="circle"
+        :class="{'p-active':step === 1 || step === 2 || step === 3}"
+      >
+        1
+        <span
+          class="step"
+          :class="{'p-active-font':step === 1 || step === 2 || step === 3}"
+        >確認購物清單</span>
+      </div>
+      <div
+        class="circle-line"
+        :class="{'p-active':step === 2 || step === 3}"
+      />
+      <div
+        class="circle"
+        :class="{'p-active':step === 2 || step === 3}"
+      >
+        2
+        <span
+          class="step"
+          :class="{'p-active-font':step === 2 || step === 3}"
+        >金流付款</span>
+      </div>
+      <div
+        class="circle-line"
+        :class="{'p-active':step === 3}"
+      />
+      <div
+        class="circle"
+        :class="{'p-active':step === 3}"
+      >
+        3
+        <span
+          class="step"
+          :class="{'p-active-font':step === 3}"
+        >完成</span>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['step'],
+  props: {
+    step: {
+      type: Number,
+      default: Number,
+    },
+  },
   data() {
     return {};
   },
@@ -41,7 +69,6 @@ export default {
     color: #FFF;
     display: inline-block;
     margin-right: -5.5px;
-    box-shadow: 1px 1px 5px black;
   }
   .step{
     position: absolute;

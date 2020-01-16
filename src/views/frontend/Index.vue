@@ -1,11 +1,11 @@
 <template>
   <div>
     <div class="bg">
-      <Navbar></Navbar>
+      <Navbar />
       <div class="container-fluid pd-0">
-        <router-view></router-view>
+        <router-view />
       </div>
-      <Footer></Footer>
+      <Footer />
     </div>
   </div>
 </template>

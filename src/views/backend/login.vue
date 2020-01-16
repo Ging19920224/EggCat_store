@@ -1,17 +1,53 @@
 <template>
   <div class="login-bg">
-    <form class="form-signin text-center" @submit.prevent="signin">
-      <h1 class="h3 mb-3 font-weight-normal text-color">蛋蛋小貓寵物用品屋</h1>
-      <h2 class="h3 mb-3 font-weight-normal text-color">後台管理系統</h2>
-      <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" id="inputEmail"
-      class="form-control" placeholder="Email address" required autofocus v-model="user.username">
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword"
-      class="form-control" placeholder="Password"  v-model="user.password" required>
-      <button class="btn btn-lg btn-info btn-block" type="submit">Sign in</button>
-      <p class="mt-5 mb-3 text-muted">&copy; EggCat</p>
-      <img class="login-logo" src="../../assets/images/logo.png">
+    <form
+      class="form-signin text-center"
+      @submit.prevent="signin"
+    >
+      <h1 class="h3 mb-3 font-weight-normal text-color">
+        蛋蛋小貓寵物用品屋
+      </h1>
+      <h2 class="h3 mb-3 font-weight-normal text-color">
+        後台管理系統
+      </h2>
+      <label
+        for="inputEmail"
+        class="sr-only"
+      >Email address</label>
+      <input
+        type="email"
+        id="inputEmail"
+        class="form-control"
+        placeholder="Email address"
+        required
+        autofocus
+        v-model="user.username"
+      >
+      <label
+        for="inputPassword"
+        class="sr-only"
+      >Password</label>
+      <input
+        type="password"
+        id="inputPassword"
+        class="form-control"
+        placeholder="Password"
+        v-model="user.password"
+        required
+      >
+      <button
+        class="btn btn-lg btn-info btn-block"
+        type="submit"
+      >
+        Sign in
+      </button>
+      <p class="mt-5 mb-3 text-muted">
+        &copy; EggCat
+      </p>
+      <img
+        class="login-logo"
+        src="../../assets/images/logo.png"
+      >
     </form>
   </div>
 </template>

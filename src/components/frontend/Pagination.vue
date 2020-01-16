@@ -1,23 +1,47 @@
 <template>
   <div>
-    <nav aria-label="Page navigation example" class="page mt-3">
+    <nav
+      aria-label="Page navigation example"
+      class="page mt-3"
+    >
       <ul class="pagination">
-        <li class="page-item" :class="{'disabled': page.nowPage <= 1}">
-          <a class="page-link" href="#"
-          @click.prevent="changePage(page.nowPage - 1)">
-            <i class="fas fa-chevron-left"></i>
+        <li
+          class="page-item"
+          :class="{'disabled': page.nowPage <= 1}"
+        >
+          <a
+            class="page-link"
+            href="#"
+            @click.prevent="changePage(page.nowPage - 1)"
+          >
+            <i class="fas fa-chevron-left" />
           </a>
         </li>
-        <li class="page-item"
-        v-for="item in page.total" :key="item" :class="{'disabled': page.nowPage === item}">
-          <a class="page-link" href="#" @click.prevent="changePage(item)"
-          :class="{'page-active': page.nowPage === item }">
+        <li
+          class="page-item"
+          v-for="item in page.total"
+          :key="item"
+          :class="{'disabled': page.nowPage === item}"
+        >
+          <a
+            class="page-link"
+            href="#"
+            @click.prevent="changePage(item)"
+            :class="{'page-active': page.nowPage === item }"
+          >
             {{ item }}
           </a>
         </li>
-        <li class="page-item" :class="{'disabled': page.nowPage == page.total}">
-          <a class="page-link" href="#" @click.prevent="changePage(page.nowPage + 1)">
-            <i class="fas fa-chevron-right"></i>
+        <li
+          class="page-item"
+          :class="{'disabled': page.nowPage == page.total}"
+        >
+          <a
+            class="page-link"
+            href="#"
+            @click.prevent="changePage(page.nowPage + 1)"
+          >
+            <i class="fas fa-chevron-right" />
           </a>
         </li>
       </ul>
@@ -27,7 +51,12 @@
 
 <script>
 export default {
-  props: ['page'],
+  props: {
+    page: {
+      type: Number,
+      default: Number,
+    },
+  },
   data() {
     return {};
   },
