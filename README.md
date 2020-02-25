@@ -1,6 +1,6 @@
 # 蛋蛋小貓寵物用品屋 ｜Vue 電商專案
 
-## Demo
+## DEMO
   <https://ging19920224.github.io/EggCat/#/>
 
 ## 開發技術
@@ -9,7 +9,7 @@
   * 使用 Vuex 管理專案資料
   * 使用 Bootstrap 4 設計 RWD
   * axios 串接 API
-  * API來源： [六角學院 - Vue 出一個電商網站](https://www.udemy.com/course/vue-hexschool/)
+  * API來源： [六角學院 - Vue 出一個電商網站](https://courses.hexschool.com/p/vue)
 
 ## 功能
  * 使用者可依照商品選單，選擇喜愛的商品
