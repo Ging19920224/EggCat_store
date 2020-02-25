@@ -6,6 +6,9 @@
   * 使用 Vuex 管理專案資料
   * 使用 Bootstrap 4 設計 RWD
 
+## Demo
+  <https://ging19920224.github.io/EggCat/#/>
+
 ## Project setup
 ```
 npm install
