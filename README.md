@@ -9,7 +9,7 @@
   * 使用 Vuex 管理專案資料
   * 使用 Bootstrap 4 設計 RWD
   * axios 串接 API
-  * API來源： [六角學院 Vue 出一個電商網站](https://www.udemy.com/course/vue-hexschool/)
+  * API來源： [六角學院 - Vue 出一個電商網站](https://www.udemy.com/course/vue-hexschool/)
 
 ## 功能
  * 使用者可依照商品選單，選擇喜愛的商品
